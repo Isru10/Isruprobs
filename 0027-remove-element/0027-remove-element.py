@@ -1,10 +1,15 @@
 class Solution(object):
     def removeElement(self, nums, val):
-        k=0
+        index = 0
         for i in range(len(nums)):
-            if nums[i]!=val:
-                nums[k]=nums[i]
-                k= k+1                
-        return k
-sol=Solution()
-print(sol.removeElement( [3,2,2,3], 3))
+            if nums[i] != val:
+                nums[index] = nums[i]
+                index += 1
+        return index
+        
+        """
+        :type nums: List[int]
+        :type val: int
+        :rtype: int
+        """
+        
