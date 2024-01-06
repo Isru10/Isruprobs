@@ -5,7 +5,6 @@ class Solution:
         ds=Counter (s)
         dt=Counter(t)
         for i,n in enumerate(dt):
-            if  (n in ds and dt[n] ==ds[n]): 
-                i+=1
-            else:
+            if  not (n in ds and dt[n] ==ds[n]): 
                 return str(n)
+                
