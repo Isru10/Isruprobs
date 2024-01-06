@@ -1,5 +1,11 @@
+from collections import *
+
 class Solution:
     def findTheDifference(self, s: str, t: str) -> str:
-        for i in (t):
-            if not ((i in s) and( (t.count(i) ) == (s.count(i) ) )):
-                return i
+        ds=Counter (s)
+        dt=Counter(t)
+        for i,n in enumerate(dt):
+            if  (n in ds and dt[n] ==ds[n]): 
+                i+=1
+            else:
+                return str(n)
