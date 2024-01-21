@@ -1,9 +1,8 @@
-class Solution(object):
-    def isPalindrome(self, s):
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
         s=s.lower()
-        for i in s:
-             if (False==i.isalnum()):
+        for i in s :
+            if i.isalnum()==False:
                 s=s.replace(i,'')
-        if(s==s[::-1]):
-            return True
-        return False
+        return s[::-1]==s[:]
+       
