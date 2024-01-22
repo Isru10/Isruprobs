@@ -13,5 +13,5 @@ class Solution:
                     zeros-=1
                 l+=1
             r+=1
-            best=max(best, r-l-1)
+            best = max(best , r-l-1)
         return best
