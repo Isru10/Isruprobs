@@ -4,7 +4,7 @@ class Solution:
             return 0
         ws=0
         l=0
-        ans=len(nums)
+        ans=float('inf')
         for r , val in enumerate (nums):
             ws+=val
             while ws>=target:
