@@ -4,8 +4,9 @@ class Solution:
         r=1
         mxp=0
         while r<len(p): 
-            c=p[r]-p[l]
             if p[l]<p[r]:
+                c=p[r]-p[l]
+
                 mxp=max(c, mxp)
             else:
                 l=r
