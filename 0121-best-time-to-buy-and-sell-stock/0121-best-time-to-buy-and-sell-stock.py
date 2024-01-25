@@ -3,11 +3,12 @@ class Solution:
         l=0
         r=1
         mxp=0
-        while r<len(p):
-            cp=p[r]-p[l]
+        while r<len(p): 
+            c=p[r]-p[l]
             if p[l]<p[r]:
-                mxp=max(mxp, cp)
-            else: 
+                mxp=max(c, mxp)
+            else:
                 l=r
             r+=1
         return mxp
+       
