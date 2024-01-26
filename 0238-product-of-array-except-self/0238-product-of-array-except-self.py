@@ -1,21 +1,10 @@
-class Solution(object):
-    def productExceptSelf(self, nums):
-        post_product=1
-        pre_product=1
-        n=len(nums)
-        output=[0]*n
-        for i in range(n):
-            output[i]=pre_product
-            pre_product*=nums[i]
-        for i in range(n-1, -1,-1):
-            output[i]*=post_product
-            post_product*=nums[i]
-        
-        
-        
-        return output
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
-        
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        ans=[1]*len(nums )
+        for i in range( 1, len ( nums )):
+             ans[i]=ans[i-1]*nums[i-1]
+        rightsum=1
+        for i in range(len(nums)-1, -1 , -1 ):
+            ans[i]*=rightsum
+            rightsum*=nums[i]
+        return ans 
