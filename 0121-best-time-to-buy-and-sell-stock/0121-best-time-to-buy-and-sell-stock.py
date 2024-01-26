@@ -1,15 +1,13 @@
 class Solution:
     def maxProfit(self, p: List[int]) -> int:
+        maxp=0
         l=0
         r=1
-        mxp=0
-        while r<len(p): 
-            if p[l]<p[r]:
-                c=p[r]-p[l]
-
-                mxp=max(c, mxp)
-            else:
+        while r<len(p):
+            cp=p[r]-p[l]
+            if p[l]>p[r]:
                 l=r
+            else:
+                maxp=max(maxp, cp)   
             r+=1
-        return mxp
-       
+        return maxp 
