@@ -1,24 +1,19 @@
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        n= len( nums )
-        if n < 3: return 
-        nums .sort()
-        result = []
-        for i in range( n-2 ): 
-            if i ==0 or nums[i ]!=nums[i-1]:
-                j, k = i +1, n-1
-            while j < k : 
-                sum= nums [ i]+ nums[j ]+ nums [ k ]
-                if sum ==0 : 
-                    result. append( [ nums [ i ], nums [ j ], nums [k ]] )
-                    while j< k and nums [ j ]==nums [ j+1]: j+=1
-                    while j< k and nums [ k]==nums [ k-1]: k-=1 
-                    j ,  k =j+1, k-1
-                elif sum > 0 : k-=1
-                else: j +=1
-              
-        return result 
-            
-
-            
-       
+        n=len(nums)
+        if n<3:return 
+        nums.sort()
+        res=[]
+        for p1 in range(n-2):
+            if p1==0 or nums[p1]!=nums[p1-1]:
+                p2, p3=p1+1, n-1
+            while p2<p3:
+                sum=nums[p1]+nums[p2]+nums[p3]
+                if sum==0:
+                    res.append([nums[p1], nums[p2], nums[p3]])
+                    while p2 < p3 and nums[p2]==nums[p2+1]: p2+=1
+                    while p2 <p3 and nums[p3]==nums[p3-1]:p3-=1
+                    p2, p3 = p2+1, p3-1
+                elif sum<0:p2+=1
+                else : p3 -=1
+        return res 
