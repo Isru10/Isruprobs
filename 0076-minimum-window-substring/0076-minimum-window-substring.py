@@ -1,25 +1,24 @@
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
         if s=="": return ""
-        window,countT={},{}
-        for i in t:
-            countT[i]=countT.get(i, 0 )+1
-            
-        have , need =0, len(countT)
-        reslen,res=float("inf"),[-1,-1]
-        l=0
+        countT, window = {},{}
         
+        for i in t:
+            countT[i]=countT.get(i,0)+1
+        reslen, res=float("inf"), [-1,-1]
+        need, have =len(countT),0
+        l=0
         for r in range(len(s)):
             c=s[r]
             window[c]=window.get(c,0)+1
-            if c in t and countT[c]==window[c]:
+            if c in countT and window[c]==countT[c]:
                 have+=1
-            while have == need :
-                if r-l+1 <reslen:
+            while need==have:
+                if (r-l+1) < reslen:
                     res=[l,r]
-                    reslen=min(reslen,r-l+1)
+                    reslen=min(reslen, r-l+1)
                 window[s[l]]-=1
-                if s[l]in countT and window[s[l]] <countT[s[l]] :
+                if s[l] in countT and window[s[l]]<countT[s[l]]:
                     have-=1
                 l+=1
         l,r=res
