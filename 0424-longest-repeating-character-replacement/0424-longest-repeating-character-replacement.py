@@ -1,14 +1,12 @@
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
-        mxlen=0
-        fre=0
-        start=0
-        h={}
-        for end, char in enumerate (s ):
-            h[char]=h.get(char,0)+1
-            fre=max(fre, h[char])
-            if (end-start+1)-fre>k:
-                h[s[start]]-=1
-                start+=1
-            mxlen=max(mxlen, end-start+1)
-        return mxlen
+        c={}
+        l=0
+        res=0
+        for r in range( len (s)):
+            c[s[r]]=c.get(s[r],0)+1
+            while (r-l+1)-max(c.values())>k:
+                c[s[l]]-=1
+                l+=1
+            res=max(res, r-l+1)
+        return res
