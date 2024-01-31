@@ -1,6 +1,13 @@
-class Solution(object):
-    def singleNumber(self, nums):
-        for i in range (len (nums)):
-            if nums.count(nums[i])==1:
-                return nums[i]
-            i+=1
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        c=Counter(nums)
+        n=0
+        for i in (nums):
+            if c[i]!=2:
+                n=i
+        
+      
+            
+            
+            
+        return n
