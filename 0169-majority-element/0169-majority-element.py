@@ -1,10 +1,10 @@
-class Solution(object):
-    def majorityElement(self, nums):
-        nums.sort()
-        n=len(nums)
-        return nums[n/2]
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        count=Counter(nums)
+        result=0
+        carry=0
+        for c in count:
+            if count[c]>result: 
+                result=max(result,count[c])
+                carry=c
+        return carry 
