@@ -8,5 +8,5 @@ class Solution:
     def countNodes(self, root: Optional[TreeNode]) -> int:
         def pre(node):
             if not node: return 0 
-            else:return pre(node.left)+pre(node.right)+1
+            else:return 1+pre(node.left)+pre(node.right)
         return pre(root)        
