@@ -7,13 +7,11 @@ class Solution:
         for i in range(n):
             if s[i]=="1" and "1" not in arr:
                 arr[r]=s[i]
-                i+=1
-                continue 
+               
             elif s[i]=="1" and "1" in arr:
                 arr[l]=s[i]
                 l+=1
-                i+=1
-                continue
+             
                
         return "".join(arr)
             
