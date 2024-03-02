@@ -11,5 +11,5 @@ class Solution:
                     counter.pop(nums[l])
                 l+=1
             res=max(res,r-l+1)
-        return res 
+        return res
             
