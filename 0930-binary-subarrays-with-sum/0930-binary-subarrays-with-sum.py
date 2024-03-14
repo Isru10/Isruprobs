@@ -8,5 +8,5 @@ class Solution:
             res+=d.get(s-goal,0)
             d[s]=d.get(s,0)+1
         return res
+    
             
-         
