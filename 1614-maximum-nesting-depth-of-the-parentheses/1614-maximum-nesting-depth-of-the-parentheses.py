@@ -1,14 +1,12 @@
 class Solution:
     def maxDepth(self, s: str) -> int:
-        r=0
+        stk=[]
         res=0
-        l=0
         for i in s:
             if i =="(":
-                r+=1
-                res=max(res,r)
-
+                stk.append(i)
+                res=max(res,len(stk))
             elif i==")":
-                r=r-1
+                stk.pop()
         return res
                 
